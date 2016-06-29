@@ -34,7 +34,7 @@ For Drupal Sites, you will need:
    - Note that the Views MediaTable module does not fully support all of the new features listed above. I am making these improvements for use in my own custom module. Please inquire Dana Dunmyer (dana.dunmyer@tqi.solutions) if you are interested in them.
 
 ## Installation
-Download this library and include it in your HTML DOM via a <script></script> tag.
+Download this library and include it in your HTML DOM via a script tag.
 
 ```
 <script type="text/javascript" src="/path/to/jquery.mediaTable.js"></script>
