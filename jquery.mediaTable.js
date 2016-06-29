@@ -351,7 +351,7 @@
     // Variable cols, the cells in this column, so we can easily find the
     // matching header (id="company") and cells (headers="company").
     return wdg.$table.find("#" + id + ", [headers=" + id + "]");
-  }
+  };
 
   /**
    * Show a column.
@@ -364,7 +364,7 @@
   var __showColumn = function(id, wdg) {
     var cols = __getColumnCells(id, wdg);
     cols.show();
-  }
+  };
 
   /**
    * Hide a column.
@@ -377,7 +377,7 @@
   var __hideColumn = function(id, wdg) {
     var cols = __getColumnCells(id, wdg);
     cols.hide();
-  }
+  };
 
   /**
    * Adds event handlers to a column's menu item in the drop down.
@@ -455,7 +455,7 @@
       .bind('change', change)
       .bind('updateCheck', updateCheck)
       .trigger('updateCheck');
-  }
+  };
 
   /**
    * Destructor function for the widget.
