@@ -99,13 +99,14 @@ The work in this branch will allow you to specify some additional options to be 
 ## Configuration Options
 You can pass a JSON object to the mediaTable method with configuration parameters. It is not required that you pass this object, nor that you set any of the values. If you omit the object, the widget will behave as designed in version 1.1.0. The following are the configurable settings:
 
-Option | Data Type | Description | Defaults To
-menu | Boolean | A boolean value. Set to FALSE to disable the menu, but why would you want to do that? If you have no menu, you won't be able to show or hide columns and the whole thing will be pointless. | true
-menuTitle | String | The text title to apply to the menu button. | "Columns:"
-menuImage | String | The full, absolute URI of the image to use as an icon. If provided, the Title you specify will be used as the alt text. If ommitted, the Title you specify will be placed in the button as a HTML text. | NULL
-menuWrapper | String | The ID of the DOM element to use as the container for the menu. | NULL
-columnSelectedClass | String | A class to apply to the menu item for columns that are selected. | mediatable-column-selected
-columnHiddenClass | String | A class to apply to the menu item for columns that are hidden. | mediatable-column-hidden
+| Option | Data Type | Description | Defaults To |
+|---------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| menu | Boolean | A boolean value. Set to FALSE to disable the menu, but why would you want to do that? If you have no menu, you won't be able to show or hide columns and the whole thing will be pointless. | true |
+| menuTitle | String | The text title to apply to the menu button. | "Columns:" |
+| menuImage | String | The full, absolute URI of the image to use as an icon. If provided, the Title you specify will be used as the alt text. If ommitted, the Title you specify will be placed in the button as a HTML text. | NULL |
+| menuWrapper | String | The ID of the DOM element to use as the container for the menu. If omitted, a new element will be created and prepended to the table. | NULL |
+| columnSelectedClass | String | A class to apply to the menu item for columns that are selected. | mediatable-column-selected |
+| columnHiddenClass | String | A class to apply to the menu item for columns that are hidden. | mediatable-column-hidden |
 
 Note that if you want the selected/hidden classes for menu items to actually change the appearance of those items, you will need to define those styles in CSS.
 
