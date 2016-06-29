@@ -114,7 +114,19 @@
      *   - menuWrapper (string): The ID of the DOM element to use as the
      *     menu wrapper.
      *
-     * @todo This is ready for testing.
+     * This is ready for testing.
+     *
+     * This isn't quite good enough. Even though I was able to grab the DOM
+     * element and put the menu in the DOM element I wanted, this code is
+     * moving that DOM element to the top of the table. Even with the CSS
+     * absolute positioning disabled, it's still in the DOM above the table.
+     *
+     * I even used a table that I inserted into the view footer and it yanked
+     * it out of that div and put it into the table wrapper div.
+     *
+     * Ok, if I skip the prepend function below, this works fine. The CSS
+     * Absolute positioning is still playing with it, but that's a problem for
+     * the designers. I may want to strip out default CSS Styling though.
      */
     if (!wdg.cfg.menuWrapper) {
       wdg.$menu = $('<div />');
@@ -127,7 +139,8 @@
     // Clear out the menu DOM element in case there's some unwanted stuff in
     // there.
     //
-    // @todo Test this.
+    // Test this.
+    // Works.
     wdg.$menu.empty();
 
     /*
@@ -171,6 +184,8 @@
      * If menuImage is omitted, use menuTitle as text content.
      *
      * @todo This is ready for testing.
+     *
+     * This works. It looks like crap, but it works.
      */
     // Check the configuration option for the menuImage parameter.
     if (wdg.cfg.menuImage && wdg.cfg.menuImage !== "") {
@@ -182,7 +197,13 @@
       wdg.$menu.$header.text(wdg.cfg.menuTitle);
     }
 
-    wdg.$table.before(wdg.$menu);
+    // Here.... This is what's inserting the menu at the top of the table. I
+    // need to only do this if I've not specified a DOM element.
+    //
+    // Only prepend the menu if this is a new DOM element.
+    if (!wdg.cfg.menuWrapper) {
+      wdg.$table.before(wdg.$menu);
+    }
 
     // Bind screen change events to update checkbox status of displayed fields.
     $(window).bind('orientationchange resize',function(){
@@ -257,7 +278,9 @@
      * I think I just need to hide it. In order to do that, all I need to do
      * is use the hide() method.
      *
-     * @todo This is ready for testing.
+     * This is ready for testing.
+     *
+     * IT WORKS! NIIIIIICE!
      */
     if ($th.is('.optional')) {
       __hideColumn(id, wdg);
@@ -305,7 +328,9 @@
        * behaviors are created below in __liInitActions(). I'm going to update
        * that function to toggle these classes and will see what happens.
        *
-       * @todo This is ready for testing.
+       * This is ready for testing.
+       * It works! At least for the default values. The class is assigned to
+       * the LI and it changes when the visibility status changes.
        */
       var $li = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-' + wdg.id + '-' + i + '" value="' + id + '" /> <label for="toggle-col-' + wdg.id + '-' + i + '">' + $th.text() + '</label></li>');
       wdg.$menu.$list.append($li);
@@ -409,12 +434,15 @@
        * adding a secondary listener to these behaviors in my code. I will
        * have to figure out how to do that...
        */
+      var val = $checkbox.val(),
+          cols = wdg.$table.find("#" + val + ", [headers=" + val + "]");
+
       if ($checkbox.is(":checked")) {
-        __showColumn($checkbox.val());
+        cols.show();
       }
       else {
-        __hideColumn($checkbox.val());
-      };
+        cols.hide();
+      }
     };
 
     /**
@@ -428,7 +456,8 @@
        * Update the class of each menu item to reflect whether it is
        * hidden or shown.
        *
-       * @todo Ready for testing.
+       * Ready for testing.
+       * Works!
        */
       var li = $checkbox.parent();
       if ($th.is(':visible')) {
@@ -442,7 +471,7 @@
         // Set the columnHidden class on the checkbox's parent LI.
         li.removeClass(wdg.cfg.columnSelectedClass);
         li.addClass(wdg.cfg.columnHiddenClass);
-      };
+      }
     };
 
     // [ML (2016/06/29)]: I'm not entirely certain how this chaining works...
