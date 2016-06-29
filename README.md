@@ -40,7 +40,7 @@ Download this library and include it in your HTML DOM via a script tag.
 <script type="text/javascript" src="/path/to/jquery.mediaTable.js"></script>
 ```
 
-For Drupal sites, this needs to be located at either sites/all/libraries/MediaTable/jquery.mediaTable.js or sites/{example.com}/libraries/jquery.mediaTable.js.
+For Drupal sites, this will be done for you by the views_mediatable module. All you need to do is put this library in either sites/all/libraries/MediaTable/jquery.mediaTable.js or sites/{example.com}/libraries/jquery.mediaTable.js.
 
 ## Example Usage:
 A live demo can be found here: http://marcopeg.com/MediaTable/, though it does not show all of the features noted above.
