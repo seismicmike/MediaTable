@@ -7,6 +7,7 @@ A Responsive Table jQuery plugin that provides the option to show/hide columns.
  * Dependencies
  * Installation
  * Example Usage
+ * Configuration Options
  * Maintainers
  * Release Notes
 
@@ -94,6 +95,51 @@ The most basic usage of creating a table would be to create the table in your DO
 ```
 
 The work in this branch will allow you to specify some additional options to be passed to the mediaTable method in a JSON object, but more detail is pending on that.
+
+## Configuration Options
+You can pass a JSON object to the mediaTable method with configuration parameters. It is not required that you pass this object, nor that you set any of the values. If you omit the object, the widget will behave as designed in version 1.1.0. The following are the configurable settings:
+
++---------------------+-----------+-----------------------------+----------------------------+
+| Option              | Data Type | Description                 | Defaults To                |
++---------------------+-----------+-----------------------------+----------------------------+
+| menu                | Boolean   | A boolean value. Set to \   | true                       |
+|                     |           | FALSE to disable the menu,\ |                            |
+|                     |           | but why would you want to\  |                            |
+|                     |           | do that? If you have no\    |                            |
+|                     |           | menu, you won't be able to\ |                            |
+|                     |           | show or hide columns and\   |                            |
+|                     |           | the whole thing will be\    |                            |
+|                     |           | pointless.                  |                            |
++---------------------+-----------+-----------------------------+----------------------------+
+| menuTitle           | TBD       | The text title to apply to\ | "Columns:"                 |
+|                     |           | the menu button.            |                            |
++---------------------+-----------+-----------------------------+----------------------------+
+| menuImage           | TBD       | The full, absolute URI of\  | NULL                       |
+|                     |           | the image to use as an\     |                            |
+|                     |           | icon.\                      |                            |
+|                     |           | \                           |                            |
+|                     |           | If provided, the Title you\ |                            |
+|                     |           | specify will be used as\    |                            |
+|                     |           | the alt text.\              |                            |
+|                     |           | \                           |                            |
+|                     |           | If ommitted, the Title\     |                            |
+|                     |           | you specify will be placed\ |                            |
+|                     |           | in the button as a HTML\    |                            |
+|                     |           | text.                       |                            |
++---------------------+-----------+-----------------------------+----------------------------+
+| menuWrapper         | TBD       | The ID of the DOM element\  | NULL                       |
+|                     |           | to use as the container\    |                            |
+|                     |           | for the menu.               |                            |
++---------------------+-----------+-----------------------------+----------------------------+
+| columnSelectedClass | TBD       | A class to apply to the\    | mediatable-column-selected |
+|                     |           | menu item for columns\      |                            |
+|                     |           | that are selected.          |                            |
++---------------------+-----------+-----------------------------+----------------------------+
+| columnHiddenClass   | TBD       | A class to apply to the\    | mediatable-column-hidden   |
+|                     |           | menu item for columns\      |                            |
+|                     |           | that are hidden.            |                            |
++---------------------+-----------+-----------------------------+----------------------------+
+
 
 ## Maintainers
  * Mike Lewis (mike.lewis@tqi.solutions)
