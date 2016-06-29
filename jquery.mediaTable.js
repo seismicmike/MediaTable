@@ -173,7 +173,7 @@
      * @todo This is ready for testing.
      */
     // Check the configuration option for the menuImage parameter.
-    if (wdg.cfg.menuImage && wdg.cfg.menuImage ! "") {
+    if (wdg.cfg.menuImage && wdg.cfg.menuImage !== "") {
       // If a menuImage is provided, insert an image tag with this image.
       wdg.$menu.$header.html('<img src="' + wdg.cfg.menuImage + '" alt="' + wdg.cfg.menuTitle + '" style="height: 32; width: 32" />');
     }

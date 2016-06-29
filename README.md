@@ -105,8 +105,8 @@ You can pass a JSON object to the mediaTable method with configuration parameter
 | menuTitle | String | The text title to apply to the menu button. | "Columns:" |
 | menuImage | String | The full, absolute URI of the image to use as an icon. If provided, the Title you specify will be used as the alt text. If ommitted, the Title you specify will be placed in the button as a HTML text. | NULL |
 | menuWrapper | String | The ID of the DOM element to use as the container for the menu. If omitted, a new element will be created and prepended to the table. | NULL |
-| columnSelectedClass | String | A class to apply to the menu item for columns that are selected. | mediatable-column-selected |
-| columnHiddenClass | String | A class to apply to the menu item for columns that are hidden. | mediatable-column-hidden |
+| columnSelectedClass | String | An HTML class to apply to the menu item for columns that are selected. | mediatable-column-selected |
+| columnHiddenClass | String | An HTML class to apply to the menu item for columns that are hidden. | mediatable-column-hidden |
 
 Note that if you want the selected/hidden classes for menu items to actually change the appearance of those items, you will need to define those styles in CSS.
 
