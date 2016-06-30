@@ -32,7 +32,7 @@ For Drupal Sites, you will need:
  * jQuery Update
  * Views
  * Views MediaTable (http://drupal.org/project/views_mediatable).
-   - Note that the Views MediaTable module does not fully support all of the new features listed above. I am making these improvements for use in my own custom module. Please inquire Dana Dunmyer (dana.dunmyer@tqi.solutions) if you are interested in them.
+   - Note that the Views MediaTable module does not fully support all of the new features listed above. I am making these improvements for use in my own custom module. Please inquire Dana Dunmyer (d.dunmyer@tqi.solutions) if you are interested in them.
 
 ## Installation
 Download this library and include it in your HTML DOM via a script tag.
@@ -111,7 +111,7 @@ You can pass a JSON object to the mediaTable method with configuration parameter
 Note that if you want the selected/hidden classes for menu items to actually change the appearance of those items, you will need to define those styles in CSS.
 
 ## Maintainers
- * Mike Lewis (mike.lewis@tqi.solutions)
+ * Mike Lewis (mlewis@tqinet.com)
 
 ## Release Notes
 ### Version 1.1.0
