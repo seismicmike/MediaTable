@@ -115,7 +115,12 @@ Note that if you want the selected/hidden classes for menu items to actually cha
 
 ## Release Notes
 ### Version 1.1.0
-This release is planned, but still in progress. Further notes will be added when appropriate.
+1.1.0 introduces new configuration options that enable new features. Now, you can:
+ * Provide the URI of an image to use as an icon for the menu button instead of text.
+ * Style the menu items of hidden and visible columns differently in CSS thanks to new default classes.
+ * Specify custom classes to use for the menu items of hidden and visible columns.
+ * Have columns be hidden by default with the option to show them in the menu.
+ * Specify a pre-existing DOM element to use as the container for the menu.
 
 ### Version 1.0.0
 This is the version of the code as I received it from Marco Peg.
