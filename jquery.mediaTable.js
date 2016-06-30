@@ -283,7 +283,7 @@
      * IT WORKS! NIIIIIICE!
      */
     if ($th.is('.optional')) {
-      __hideColumn(id, wdg);
+      __hideColumn($th, wdg);
     }
 
 
@@ -372,35 +372,37 @@
    * @return array
    *   A list of html TH and TD elements.
    */
-  var __getColumnCells = function(id, wdg) {
+  var __getColumnCells = function(th, wdg) {
+  // var __getColumnCells = function(id, wdg) {
     // Variable cols, the cells in this column, so we can easily find the
     // matching header (id="company") and cells (headers="company").
+    var id = th.attr('id');
     return wdg.$table.find("#" + id + ", [headers=" + id + "]");
   };
 
   /**
    * Show a column.
    *
-   * @param string id
-   *   The HTML ID of the header.
+   * @param object th
+   *   The column header DOM object.
    * @param object wdg
    *   The mediatable widget.
    */
-  var __showColumn = function(id, wdg) {
-    var cols = __getColumnCells(id, wdg);
+  var __showColumn = function(th, wdg) {
+    var cols = __getColumnCells(th, wdg);
     cols.show();
   };
 
   /**
    * Hide a column.
    *
-   * @param string id
-   *   The HTML ID of the header.
+   * @param object th
+   *   The column header DOM object.
    * @param object wdg
    *   The mediatable widget.
    */
-  var __hideColumn = function(id, wdg) {
-    var cols = __getColumnCells(id, wdg);
+  var __hideColumn = function(th, wdg) {
+    var cols = __getColumnCells(th, wdg);
     cols.hide();
   };
 
@@ -434,14 +436,11 @@
        * adding a secondary listener to these behaviors in my code. I will
        * have to figure out how to do that...
        */
-      var val = $checkbox.val(),
-          cols = wdg.$table.find("#" + val + ", [headers=" + val + "]");
-
       if ($checkbox.is(":checked")) {
-        cols.show();
+        __showColumn($th, wdg);
       }
       else {
-        cols.hide();
+        __hideColumn($th, wdg);
       }
     };
 
