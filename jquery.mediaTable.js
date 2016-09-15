@@ -261,6 +261,13 @@
     });
 
     /*
+     * 2016-09-15: Added support for colunms in the table footer.
+     */
+    $('tfoot tr',wdg.$table).each(function() {
+      __trInit.call(this, i, id, classes, $th);
+    });
+
+    /*
      * Check to see if this column should be hidden by default.
      * Set the appropriate attributes if it is.
      *
